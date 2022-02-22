@@ -12,8 +12,6 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     var breeds = listOf<String>("Affenpinscher", "WalkerHound", "Appenzeller", "Chow", "EskimoDog", "GermanShepherd", "GoldenRetriever","Groenendael", "Keeshond")
 
-
-//    var images = listOf<String>("img1", "img2","img3", "img4", "img5", "img6", "img7", "img8", "img9","img10","img11", "img12","img13", "img14", "img15", "img16", "img17", "img18", "img19")
     val listOfImages = listOf(listOf("img1", "img2","img3", "img4", "img5", "img6", "img7", "img8", "img9"),
                                 listOf("img10", "img11","img12","img13","img14","img15","img16","img17","img18"),
                                 listOf("img19","img20","img21","img22","img23","img24","img25","img26","img27"),
@@ -51,22 +49,22 @@ class MainActivity : AppCompatActivity() {
         val lblMain = findViewById<TextView>(R.id.lbl_main)
         val nextDogBtn = findViewById<Button>(R.id.btn_next)
 
+        breedNumber.clear()
+        Affenpinscher.clear()
+        WalkerHound.clear()
+        Appenzeller.clear()
+        Chow.clear()
+        EskimoDog.clear()
+        GermanShepherd.clear()
+        GoldenRetriever.clear()
+        Groenendael.clear()
+        Keeshond.clear()
 
-
-
-//        nextDogBtn.setOnClickListener {
-//            loadDogs()
-//        }
-
-
-
-
-
+        nextDogBtn.setOnClickListener {
+            loadDogs(lblMain)
+        }
 
     }
-
-    fun loadDogs(image1:ImageView, image2:ImageView, image3:ImageView, lblMain: TextView) {
-        Log.d("find run", "LoadDogs ran")
 //        var resource: String = dogs.get(0).toString()
 //        var resID1 = resources.getIdentifier(resource, "drawable", packageName)
 
@@ -74,6 +72,41 @@ class MainActivity : AppCompatActivity() {
 //        image1.setImageResource(resID1)
 //        image2.setImageResource(resID1)
 //        image3.setImageResource(resID1)
+//image1:ImageView, image2:ImageView, image3:ImageView,
+
+    fun loadDogs( lblMain: TextView) {
+        breedNumber.clear()
+        var gen: Random = Random()
+        var breed1 = 0 + gen.nextInt(8)
+
+        while(breedNumber.contains(breed1)){
+            breed1 = 0 + gen.nextInt(8)
+        }
+        breedNumber.add(breed1)
+
+
+        var breed2 = 0 + gen.nextInt(8)
+
+        while(breedNumber.contains(breed2)){
+            breed2 = 0 + gen.nextInt(8)
+        }
+        breedNumber.add(breed2)
+
+
+        var breed3 = 0 + gen.nextInt(8)
+
+        while(breedNumber.contains(breed3)){
+            breed3 = 0 + gen.nextInt(8)
+        }
+        breedNumber.add(breed3)
+
+        var dog1 = breeds[breed1]
+        var dog2 = breeds[breed2]
+        var dog3 = breeds[breed3]
+
+        lblMain.text = ""
+        lblMain.text = "$dog1 , $dog2 , $dog3"
+
 
 
     }
