@@ -3,4 +3,6 @@
     <string name="nextDog">next dog</string>
     <string name="lbl_main">" "</string>
     <string name="btn_next">next</string>
+    <string name="round">" "</string>
+    <string name="result">" "</string>
 </resources>
