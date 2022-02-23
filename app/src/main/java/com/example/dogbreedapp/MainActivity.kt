@@ -84,8 +84,10 @@ class MainActivity : AppCompatActivity() {
         val nextDogBtn = findViewById<Button>(R.id.btn_next)
         val finishBtn = findViewById<Button>(R.id.btnFinish)
         val dogs = findViewById<ImageView>(R.id.dogs)
+        val logo = findViewById<ImageView>(R.id.logo)
         loadDogs(lblMain, image1, image2, image3, lblRound, result)
 
+        lblMain.setTextColor(Color.BLACK)
         nextDogBtn.setOnClickListener {
             if (goNext) {
                 loadDogs(lblMain, image1, image2, image3, lblRound, result)
@@ -117,6 +119,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         dogs.setImageResource(R.drawable.dogs)
+        logo.setImageResource(R.drawable.scoob)
 
     }
 
@@ -137,6 +140,7 @@ class MainActivity : AppCompatActivity() {
         breedNumber.clear()
 
         if ((Affenpinscher.size == 8) || (WalkerHound.size == 8) || (Appenzeller.size == 8) || (Chow.size == 8) || (EskimoDog.size == 8) || (GermanShepherd.size == 8) || (GoldenRetriever.size == 8) || (Keeshond.size == 8) || (Labrador.size == 8) || (Rottwiler.size == 8)) {
+            Toast.makeText(this, "Round $round completed!", Toast.LENGTH_SHORT).show()
             round += 1
 
             breedNumber.clear()
@@ -151,6 +155,7 @@ class MainActivity : AppCompatActivity() {
             Labrador.clear()
             Rottwiler.clear()
             lblRound.text = "Round $round"
+
         }
 
 

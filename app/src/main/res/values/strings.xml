@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DogBreedApp</string>
+    <string name="app_name">Dog Breeds</string>
     <string name="nextDog">next dog</string>
     <string name="lbl_main">" "</string>
     <string name="btn_next">next</string>
@@ -8,5 +8,5 @@
     <string name="btn_finish">Finish</string>
     <string name="correct_Count">" "</string>
     <string name="wrongCount">" "</string>
-    <string name="lbl_score">Score Board</string>
+    <string name="lbl_score">Scoreboard</string>
 </resources>
