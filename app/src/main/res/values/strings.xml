@@ -5,4 +5,7 @@
     <string name="btn_next">next</string>
     <string name="round">" "</string>
     <string name="result">" "</string>
+    <string name="btn_finish">Finish</string>
+    <string name="correct_Count">" "</string>
+    <string name="wrongCount">" "</string>
 </resources>

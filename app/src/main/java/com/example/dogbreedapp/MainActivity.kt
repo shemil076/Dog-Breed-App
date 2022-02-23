@@ -1,7 +1,7 @@
 package com.example.dogbreedapp
 
 import android.annotation.SuppressLint
-import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import java.util.*
 import java.util.Collections.shuffle
 
@@ -79,8 +80,9 @@ class MainActivity : AppCompatActivity() {
         val image3 = findViewById<ImageView>(R.id.imageView3)
         val lblMain = findViewById<TextView>(R.id.lbl_main)
         val lblRound = findViewById<TextView>(R.id.round)
-        val result = findViewById<TextView>(R.id.result)
+        val result = findViewById<TextView>(R.id.lbl_result)
         val nextDogBtn = findViewById<Button>(R.id.btn_next)
+        val finishBtn = findViewById<Button>(R.id.btnFinish)
 
         loadDogs(lblMain, image1, image2, image3, lblRound, result)
 
@@ -104,6 +106,14 @@ class MainActivity : AppCompatActivity() {
         image3.setOnClickListener {
 
             dogbreed3?.let { it1 -> check(it1, result) }
+        }
+
+        finishBtn.setOnClickListener {
+            val secondActivityIntent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("correct", correctCount)
+            intent.putExtra("wrong", incorrectCount)
+            Toast.makeText(this, "Moving on...", Toast.LENGTH_SHORT).show()
+            startActivity(secondActivityIntent)
         }
 
     }
@@ -247,6 +257,7 @@ class MainActivity : AppCompatActivity() {
 
         shuffle(displayBreedName)
         randomBreed = displayBreedName[0]
+
         lblMain.text = "Select the image of $randomBreed"
         count += 1
         Log.d("LoadDog method ran", count.toString())
@@ -289,8 +300,5 @@ class MainActivity : AppCompatActivity() {
         }
         goNext = true;
 
-
     }
-
-
 }
