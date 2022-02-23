@@ -110,8 +110,8 @@ class MainActivity : AppCompatActivity() {
 
         finishBtn.setOnClickListener {
             val secondActivityIntent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("correct", correctCount)
-            intent.putExtra("wrong", incorrectCount)
+            secondActivityIntent.putExtra("correct", correctCount)
+            secondActivityIntent.putExtra("wrong", incorrectCount)
             Toast.makeText(this, "Moving on...", Toast.LENGTH_SHORT).show()
             startActivity(secondActivityIntent)
         }

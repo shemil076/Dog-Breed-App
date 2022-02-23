@@ -15,8 +15,8 @@ class SecondActivity : AppCompatActivity() {
         var correctCount = intent.getIntExtra("correct",0)
         var incorrectCount = intent.getIntExtra("wrong",0)
 
-        displayCorrect.text = correctCount.toString()
-        displayWrong.text = incorrectCount.toString()
+        displayCorrect.text = "Number of corrects: " + correctCount.toString()
+        displayWrong.text = "Number of incorrects: " + incorrectCount.toString()
 
 
     }
