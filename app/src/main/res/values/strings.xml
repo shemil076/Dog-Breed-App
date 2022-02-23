@@ -8,4 +8,5 @@
     <string name="btn_finish">Finish</string>
     <string name="correct_Count">" "</string>
     <string name="wrongCount">" "</string>
+    <string name="lbl_score">Score Board</string>
 </resources>

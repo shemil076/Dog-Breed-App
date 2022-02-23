@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lbl_main"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -72,7 +72,7 @@
         android:id="@+id/lbl_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="248dp"
+        android:layout_marginBottom="296dp"
         android:text="@string/result"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -84,7 +84,7 @@
     <LinearLayout
         android:layout_width="345dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="196dp"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:orientation="horizontal"
@@ -104,7 +104,16 @@
             android:layout_width="148dp"
             android:layout_height="48dp"
             android:layout_marginLeft="50dp"
-            android:paddingLeft="20sp"
             android:text="@string/btn_finish" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dogs"
+        android:layout_width="387dp"
+        android:layout_height="176dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

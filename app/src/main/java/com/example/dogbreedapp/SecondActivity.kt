@@ -1,7 +1,10 @@
 package com.example.dogbreedapp
 
+import android.graphics.Color
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 
 class SecondActivity : AppCompatActivity() {
@@ -15,9 +18,16 @@ class SecondActivity : AppCompatActivity() {
         var correctCount = intent.getIntExtra("correct",0)
         var incorrectCount = intent.getIntExtra("wrong",0)
 
-        displayCorrect.text = "Number of corrects: " + correctCount.toString()
-        displayWrong.text = "Number of incorrects: " + incorrectCount.toString()
+        var trophy = findViewById<ImageView>(R.id.trophy)
+        trophy.setImageResource(R.drawable.trophy)
 
 
+
+        displayCorrect.text = "Number of correct selections: " + correctCount.toString()
+        displayCorrect.setTextColor(Color.GREEN)
+
+        displayWrong.text = "Number of incorrect selections: " + incorrectCount.toString()
+
+        displayWrong.setTextColor(Color.RED)
     }
 }

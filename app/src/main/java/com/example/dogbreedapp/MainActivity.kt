@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         val result = findViewById<TextView>(R.id.lbl_result)
         val nextDogBtn = findViewById<Button>(R.id.btn_next)
         val finishBtn = findViewById<Button>(R.id.btnFinish)
-
+        val dogs = findViewById<ImageView>(R.id.dogs)
         loadDogs(lblMain, image1, image2, image3, lblRound, result)
 
         nextDogBtn.setOnClickListener {
@@ -115,6 +115,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Moving on...", Toast.LENGTH_SHORT).show()
             startActivity(secondActivityIntent)
         }
+
+        dogs.setImageResource(R.drawable.dogs)
 
     }
 
